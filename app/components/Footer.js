@@ -1,6 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
+const Footer = (props) => props.isLoading && (
+  <View style={styles.container}>
+    <Text style={styles.text}>Loading...</Text>
+  </View>
+)
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -24,13 +30,4 @@ const styles = StyleSheet.create({
   },
 })
 
-const footer = (props) => {
-  if (props.isLoading) {
-    return (<View style={styles.container}>
-      <Text style={styles.text}>Loading</Text>
-    </View>)
-  }
-  return <Text style={styles.text}>Loaded</Text>
-}
-
-export default footer
+export default Footer

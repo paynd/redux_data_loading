@@ -1,27 +1,27 @@
-import * as types from '../actions/actionTypes';
+import { LOAD_IMG, LOAD_IMG_SUCCESS } from '../actions/images';
 
 const initialState = {
   isLoading: false,
-  images:[
+  result:[
     "http://placehold.it/150/771796",
     "http://placehold.it/150/24f355",
     "http://placehold.it/150/d32776",
   ]
 };
 
-export default function loader(state = initialState, action = {}) {
+export default function images(state = initialState, action = {}) {
   switch (action.type) {
-    case types.LOAD_STARTED:
+    case LOAD_IMG:
       return {
         ...state,
         isLoading: true
       }
-    case types.LOAD_COMPLETED:
+    case LOAD_IMG_SUCCESS:
       return {
         ...state,
         isLoading: false
       }
     default:
-      return {...state}
+      return state
   }
 }

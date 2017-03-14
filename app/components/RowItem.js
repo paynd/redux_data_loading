@@ -8,25 +8,20 @@ import { View, Text, StyleSheet, Image, PropTypes } from 'react-native'
  * @param data expects to contain url, thumbnailUrl, text
  * @constructor
  */
-const RowItemRenderer = (data) => (
-
+const RowItem = (data) => (
   <View style={styles.container}>
-    <Image source={{ uri: data.data}} style={styles.photo} />
+    <Image source={{ uri: data.data }} style={styles.photo} />
     <Text style={styles.text}>
-     Lorem Ipsum
+      Lorem Ipsum
     </Text>
   </View>
 )
-
-export default RowItemRenderer
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
-
   },
   text: {
     height: 60,
@@ -40,3 +35,5 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 })
+
+export default RowItem

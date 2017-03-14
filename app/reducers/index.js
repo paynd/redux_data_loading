@@ -1,5 +1,4 @@
-import loader from './loader';
+import { combineReducers } from 'redux'
+import images from './images'
 
-export default {
-  loader
-}
+export default combineReducers({ images })
