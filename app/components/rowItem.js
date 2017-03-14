@@ -11,7 +11,7 @@ import { View, Text, StyleSheet, Image, PropTypes } from 'react-native'
 const RowItemRenderer = (data) => (
 
   <View style={styles.container}>
-    <Image source={{ uri: data}} style={styles.photo} />
+    <Image source={{ uri: data.data}} style={styles.photo} />
     <Text style={styles.text}>
      Lorem Ipsum
     </Text>
