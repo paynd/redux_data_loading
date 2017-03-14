@@ -14,6 +14,8 @@ export default class ImagesListComponent extends Component {
         this.props.images
       ])
     }
+    console.log("images: " + this.props.images)
+    console.log("dataSource: " + this.state.dataSource)
   }
 
   render () {
