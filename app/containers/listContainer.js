@@ -10,6 +10,10 @@ import { connect } from 'react-redux';
  * Smart component container.
  */
 class ListContainer extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   // componentDidMount(){
   //   actions.loadStarted();
   // }
@@ -23,14 +27,14 @@ class ListContainer extends Component {
         isLoading={state.isLoading}
         images={state.images}
         />
-    );
+    )
   }
 }
 
 export default connect(state => ({
-    state: state,
+    state: state.loader,
   }),
   (dispatch) => ({
     actions: bindActionCreators(actions, dispatch)
   })
-)(ListContainer);
+)(ListContainer)

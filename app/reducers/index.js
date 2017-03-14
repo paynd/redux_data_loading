@@ -1,5 +1,5 @@
 import loader from './loader';
 
-export {
+export default {
   loader
-};
+}

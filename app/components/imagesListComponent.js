@@ -10,12 +10,10 @@ export default class ImagesListComponent extends Component {
 
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([
+      dataSource: ds.cloneWithRows(
         this.props.images
-      ])
+      )
     }
-    console.log("images: " + this.props.images)
-    console.log("dataSource: " + this.state.dataSource)
   }
 
   render () {
@@ -23,7 +21,7 @@ export default class ImagesListComponent extends Component {
       <View style={{flex: 10, paddingTop: 22}}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={data => <RowItemRenderer {...data} />}
+          renderRow={data => <RowItemRenderer data={data} />}
           renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
           renderFooter={() => <Footer isLoading={ this.props.isLoading } />}
         />

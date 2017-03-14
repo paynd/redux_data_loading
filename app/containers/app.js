@@ -6,7 +6,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
-import * as reducers from '../reducers/loader';
+import reducers from '../reducers'
 import ListContainer from './listContainer';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);

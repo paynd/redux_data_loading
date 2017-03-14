@@ -5,14 +5,15 @@ import React from 'react'
 import { View, Text, StyleSheet, Image, PropTypes } from 'react-native'
 
 /**
- * @param props expects to contain url, thumbnailUrl, text
+ * @param data expects to contain url, thumbnailUrl, text
  * @constructor
  */
-const RowItemRenderer = props => (
+const RowItemRenderer = (data) => (
+
   <View style={styles.container}>
-    <Image source={{ uri: props.thumbnailUrl }} style={styles.photo} />
+    <Image source={{ uri: data}} style={styles.photo} />
     <Text style={styles.text}>
-      {props.title}
+     Lorem Ipsum
     </Text>
   </View>
 )

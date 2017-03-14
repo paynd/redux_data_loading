@@ -15,13 +15,13 @@ export default function loader(state = initialState, action = {}) {
       return {
         ...state,
         isLoading: true
-      };
+      }
     case types.LOAD_COMPLETED:
       return {
         ...state,
         isLoading: false
-      };
+      }
     default:
-      return state;
+      return {...state}
   }
 }
