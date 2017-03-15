@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import List from './List';
+import List from './List'
 import store from '../store'
 
 
@@ -10,6 +10,6 @@ export default class App extends Component {
       <Provider store={store}>
         <List />
       </Provider>
-    );
+    )
   }
 }

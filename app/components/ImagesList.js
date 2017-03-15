@@ -4,25 +4,25 @@ import RowItem from './RowItem'
 import Footer from './Footer'
 
 export default class ImagesList extends Component {
-  componentWillMount(){
-    this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+  componentWillMount() {
+    this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
   }
 
-  renderRow = (data) => (
+  renderRow = data => (
     <RowItem data={data} />
   )
 
-  renderSeparator = (sectionId, rowId)  => (
+  renderSeparator = (sectionId, rowId) => (
     <View key={rowId} style={styles.separator} />
   )
 
-  renderFooter = ()  => (
-    <Footer isLoading={ this.props.isLoading } />
+  renderFooter = () => (
+    <Footer isLoading={this.props.isLoading} />
   )
 
-  render () {
+  render() {
     return (
-      <View style={{flex: 10, paddingTop: 22}}>
+      <View style={{ flex: 10, paddingTop: 22 }}>
         <ListView
           dataSource={this.ds.cloneWithRows(
             this.props.images
