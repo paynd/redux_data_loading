@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux'
-import images from './images'
+import contacts from './contacts'
 
-export default combineReducers({ images })
+export default combineReducers({ contacts })

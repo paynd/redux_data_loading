@@ -1,28 +1,25 @@
-import React, { Component } from 'react'
-import ImagesList from '../components/ImagesList'
-import { loadImages } from '../actions/images'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import ImagesList from '../components/ImagesList'
+import { loadContacts } from '../actions/contacts'
 
 /**
  * Smart component container.
  */
 class List extends Component {
-  // componentDidMount(){
-  //   actions.loadStarted();
-  // }
+  static propTypes = {
+    loadContacts: PropTypes.func.isRequired,
+  }
 
   render() {
-    const { result, isLoading } = this.props
     return (
-      <ImagesList
-        isLoading={isLoading}
-        images={result}
-      />
+      <ImagesList {...this.props} />
     )
   }
 }
 
+
 export default connect(
-  state => state.images,
-  { loadImages }
+  state => state.contacts,
+  { loadContacts }
 )(List)

@@ -8,11 +8,11 @@ import { View, Text, StyleSheet, Image, PropTypes } from 'react-native'
  * @param data expects to contain url, thumbnailUrl, text
  * @constructor
  */
-const RowItem = data => (
+const RowItem = props => (
   <View style={styles.container}>
-    <Image source={{ uri: data.data }} style={styles.photo} />
+    <Image source={{ uri: props.data.picture.thumbnail }} style={styles.photo} />
     <Text style={styles.text}>
-      Lorem Ipsum
+      {props.data.name.title} {props.data.name.last}
     </Text>
   </View>
 )
